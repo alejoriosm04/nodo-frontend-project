@@ -1,3 +1,8 @@
 header {
     display: inline;
 }
+
+#registrarse-button {
+    background-color: #00c99f; 
+    color: white;
+}
