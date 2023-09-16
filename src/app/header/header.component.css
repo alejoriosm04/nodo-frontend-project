@@ -6,3 +6,7 @@ header {
     background-color: #00c99f; 
     color: white;
 }
+
+#mobile-menu-list li a:hover {
+    background-color: #00c99f;
+}
