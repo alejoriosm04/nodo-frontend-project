@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainSlideshowComponent } from './main-slideshow/main-slideshow.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AlliesSlideshowComponent } from './allies-slideshow/allies-slideshow.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MainSlideshowComponent
+    MainSlideshowComponent,
+    AlliesSlideshowComponent
   ],
   imports: [
     BrowserModule,
