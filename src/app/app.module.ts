@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainSlideshowComponent } from './main-slideshow/main-slideshow.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlliesSlideshowComponent } from './allies-slideshow/allies-slideshow.component';
+import { NodoBannerComponent } from './nodo-banner/nodo-banner.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AlliesSlideshowComponent } from './allies-slideshow/allies-slideshow.co
     HeaderComponent,
     FooterComponent,
     MainSlideshowComponent,
-    AlliesSlideshowComponent
+    AlliesSlideshowComponent,
+    NodoBannerComponent
   ],
   imports: [
     BrowserModule,

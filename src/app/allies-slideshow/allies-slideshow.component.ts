@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./allies-slideshow.component.css']
 })
 export class AlliesSlideshowComponent {
-
+  
 }
