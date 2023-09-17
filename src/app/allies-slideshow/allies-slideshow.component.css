@@ -1,54 +1,76 @@
 body {
-    align-items: center;
-    background: #fed501;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
+  align-items: center;
+  background: #fed501;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.slider {
+  background: #fed501;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  max-width: 100%; /* Make the slider responsive */
+  position: relative;
+  width: 100%; /* Make the slider responsive */
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgba(254, 213, 1, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 20%; /* Adjust this width as needed */
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 16);
+}
+
+.slide {
+  height: 100px;
+  width: 250px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .slider {
-    background: #fed501;
-    height: 100px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 960px;
+  100% {
+    transform: translateX(calc(-250px * 12));
   }
-  
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
   .slider::before,
   .slider::after {
-    background: linear-gradient(to right, rgba(254, 213, 1, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100px;
-    position: absolute;
-    width: 200px;
-    z-index: 2;
-  }
-  
-  .slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-  }
-  
-  .slider::before {
-    left: 0;
-    top: 0;
+    width: 30%; /* Adjust this width for smaller screens */
   }
   
   .slide-track {
-    animation: scroll 40s linear infinite;
-    display: flex;
-    width: calc(250px * 16);
-  }
-  
-  .slide {
-    height: 100px;
-    width: 250px;
+    width: calc(250px * 12); /* Adjust this width for smaller screens */
   }
   
   @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 12)); }
+    100% {
+      transform: translateX(calc(-250px * 10)); /* Adjust for smaller screens */
+    }
   }
-  
+}
