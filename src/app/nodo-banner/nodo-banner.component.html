@@ -1,1 +1,27 @@
-<p>nodo-banner works!</p>
+<div class="bg-gradient-to-r from-emerald-500 from-10% via-sky-500 via-70% to-indigo-500 to-90%  py-20 sm:py-36 lg:py-40">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Photo Carousel Block -->
+            <ngb-carousel *ngIf="images" [interval]="8000" [showNavigationArrows]="false" [showNavigationIndicators]="false" [pauseOnHover]="false">
+                <ng-template ngbSlide *ngFor="let image of images">
+                    <div class="carousel-wrapper">
+                        <a href="{{image.link}}">
+                            <img class="rounded-lg" src="assets/courses/{{image.name}}" [alt]="image.name">
+                        </a>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+            <!-- Text Block -->
+            <div class="p-7">
+                <h2 class="text-4xl sm:text-6xl text-center text-white mb-4 font-kickertrial">¡En NODO nada está escrito, prográmalo aprendiendo desarrollo web!</h2>
+                <div class="main-page-buttons text-sm sm:text-xl font-inputsans p-4 items-center">
+                    <ul class="flex flex-wrap space-x-2 sm:space-x-10 font-inputsans justify-center">
+                        <li class="mb-2 sm:mb-0"><a href="https://www.nodoeafit.com/verificar" class="hover:underline p-3 rounded-lg text-center">Visita nodoeafit.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
