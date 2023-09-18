@@ -1,1 +1,88 @@
-<p>form works!</p>
+<div class="bg-gray-1000 p-4">
+    <div style="width: 1180px;;" class="max-w-md- mx width  -auto bg-white p-6 rounded-md shadow-md">
+        <h2 class="text-3xl font-semibold text-center mb-6">Formulario de Reserva</h2>
+        <form>
+            <div class="mb-4">
+                <label for="nombre" class="block text-gray-2000 text-left">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" class="w-full p-2 border 900 px rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="identificacion" class="block text-gray-6000 text-left">Número de identificación (cédula o pasaporte):</label>
+                <input type="number" id="identificacion" name="identificacion" class="w-full p-2 border rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="correo" class="block text-gray-600 text-left">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" class="w-full p-2 border rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="telefono" class="block text-gray-600 text-left">Número de teléfono:</label>
+                <input type="number" id="telefono" name="telefono" class="w-full p-2 border rounded-md">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 text-left">Afiliación de EAFIT:</label>
+                <div class="w-full border rounded-md p-2">
+                    <select name="afiliacion" class="w-full">
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="Profesor">Profesor</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Visitante externo">Visitante externo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="fecha" class="block text-gray-600 text-left">Fecha:</label>
+                <input type="date" id="fecha" name="data-input" class="w-full p-2 border rounded-md text-left" placeholder="Selecciona la fecha" data-input>
+            </div>
+            <div class="mb-4">
+                <label for="hora" class="block text-gray-600 text-left">Hora:</label>
+                <input type="time" id="hora" name="time-input" class="w-full p-2 border rounded-md text-left" placeholder="Selecciona la hora">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 text-left">Tiempo estimado de la reserva:</label>
+                <div class="w-full border rounded-md p-2">
+                    <select name="tiempo" class="w-full">
+                        <option value="60">60 minutos</option>
+                        <option value="120">120 minutos</option>
+                        <option value="180">180 minutos</option>
+                        <option value="240">240 minutos</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 text-left">¿Cuántas personas estarán utilizando el espacio?</label>
+                <div class="w-full border rounded-md p-2">
+                    <select name="personas" class="w-full">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 o mas </option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-600 text-left">Requieres servicios adicionales en los Laboratorios de Futuros?</label>
+                <div class="w-full border rounded-md p-2">
+                    <select name="servicios" class="w-full">
+                        <option value="Marcador">Marcador</option>
+                        <option value="Televisor">Televisor</option>
+                        <option value="Silla(adicional)">Silla (adicional)</option>
+                        <option value="Ninguno">Ninguno</option>
+                    </select>
+
+                </div>
+
+
+                <div style="padding-top: 40px;">
+                     <input type="checkbox" name="Acepta Terminos y condiciones">
+                     <label> <strong>Acepto Terminos y condiciones</strong>  </label>
+                </div>
+                    
+                </div>
+           
+            <div class="mb-4 text-center">
+                <button type="button" class="bg-yellow-500 text-white py-2 px-4 rounded-md">Reservar</button>
+            </div>
+        </form>
+    </div>
+</div>
+    
