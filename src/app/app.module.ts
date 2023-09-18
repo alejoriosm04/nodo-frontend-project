@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlliesSlideshowComponent } from './allies-slideshow/allies-slideshow.component';
 import { NodoBannerComponent } from './nodo-banner/nodo-banner.component';
 import { FormComponent } from './form/form.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormComponent } from './form/form.component';
     MainSlideshowComponent,
     AlliesSlideshowComponent,
     NodoBannerComponent,
-    FormComponent
+    FormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
