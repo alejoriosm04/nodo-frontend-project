@@ -11,6 +11,7 @@ import { AlliesSlideshowComponent } from './allies-slideshow/allies-slideshow.co
 import { NodoBannerComponent } from './nodo-banner/nodo-banner.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
+import { LabSpacesComponent } from './lab-spaces/lab-spaces.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     AlliesSlideshowComponent,
     NodoBannerComponent,
     FormComponent,
-    HomeComponent
+    HomeComponent,
+    LabSpacesComponent
   ],
   imports: [
     BrowserModule,
