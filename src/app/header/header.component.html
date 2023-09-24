@@ -1,4 +1,4 @@
-<header>
+<header class="fixed-header">
     <div class="bg-[#010068]">
         <div class="container flex justify-between mx-auto px-4 py-3 text-white items-center">
             <div class="md:flex hidden items-center">
@@ -25,14 +25,15 @@
             </button>
         </div>
     </div>  
+    <!-- Mobile Menu -->
+    <div *ngIf="isMobileMenuOpen" class="lg:hidden bg-[#010068] text-white text-center font-inputsans">
+        <ul id="mobile-menu-list">
+            <li><a href="https://www.nodoeafit.com/verificar" class="block py-3">NODO</a></li>
+            <li><a href="#" class="block py-3">Eventos</a></li>
+            <li><a routerLink="/labspaces" class="block py-3">Reserva</a></li>
+            <li><a href="#" class="block py-3">Registrarse</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- Mobile Menu -->
-<div *ngIf="isMobileMenuOpen" class="lg:hidden bg-[#010068] text-white text-center font-inputsans">
-    <ul id="mobile-menu-list">
-        <li><a href="https://www.nodoeafit.com/verificar" class="block py-3">NODO</a></li>
-        <li><a href="#" class="block py-3">Eventos</a></li>
-        <li><a routerLink="/labspaces" class="block py-3">Reserva</a></li>
-        <li><a href="#" class="block py-3">Registrarse</a></li>
-    </ul>
-</div>
+

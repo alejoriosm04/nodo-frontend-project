@@ -1,6 +1,4 @@
-header {
-    display: inline;
-}
+
 
 #registrarse-button {
     background-color: #00c99f; 
@@ -10,3 +8,12 @@ header {
 #mobile-menu-list li a:hover {
     background-color: #00c99f;
 }
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Adjust background color as needed */
+    z-index: 100; /* Adjust z-index to ensure the header is above other content */
+  }
