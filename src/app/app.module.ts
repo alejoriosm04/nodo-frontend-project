@@ -12,6 +12,7 @@ import { NodoBannerComponent } from './nodo-banner/nodo-banner.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { LabSpacesComponent } from './lab-spaces/lab-spaces.component';
+import { ConoceMasComponent } from './conoce-mas/conoce-mas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LabSpacesComponent } from './lab-spaces/lab-spaces.component';
     NodoBannerComponent,
     FormComponent,
     HomeComponent,
-    LabSpacesComponent
+    LabSpacesComponent,
+    ConoceMasComponent
   ],
   imports: [
     BrowserModule,
