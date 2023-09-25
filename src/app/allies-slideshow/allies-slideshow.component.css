@@ -7,7 +7,7 @@ body {
 }
 
 .slider {
-  background: #fed501;
+  background: #00c89e;
   height: 100px;
   margin: auto;
   overflow: hidden;
@@ -18,7 +18,7 @@ body {
 
 .slider::before,
 .slider::after {
-  background: linear-gradient(to right, rgba(254, 213, 1, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(0, 200, 158, 1) 0%, rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 100px;
   position: absolute;
