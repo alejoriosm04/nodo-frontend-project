@@ -1,70 +1,74 @@
-<div class="flex flex-wrap justify-center gap-6 mt-2.5 pt-48">
-    <div class="w-96 h-48 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-black border-2">
-        <img src="../../assets/images-lab/sala-percepcion.jpg" alt="Sala de Percepción" class="w-1/2 h-auto">
-        <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800">Sala de Percepción</h2>
-            <p class="text-gray-700 text-base mt-2">Lorem ipsum dol.</p>
-            <a routerLink="/form">
-                <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="w-96 h-48 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-black border-2">
-        <img src="../../assets/images-lab/asombro-creacion.jpg" alt="Segunda Sala de Asombro" class="w-1/2 h-auto">
-        <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800 ">Espacio de Asombro</h2>
-            <p class="text-gray-700 text-base mt-2">Lorem ipsum dol.</p>
-            <a routerLink="/form">
-                <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="w-96 h-48 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-black border-2">
-        <img src="../../assets/images-lab/sala-creacion.jpg" alt="Sala de Creación" class="w-1/2 h-auto">
-        <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800">Sala de Creación</h2>
-            <p class="text-gray-700 text-base mt-2">Lorem ipsum dol.</p>
-            <a routerLink="/form">
-                <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="w-96 h-48 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-black border-2">
-        <img src="../../assets/images-lab/todo-el-laboratorio.jpg" alt="Sala de Conexión" class="w-1/2 h-auto">
-        <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800">Sala de Conexión</h2>
-            <p class="text-gray-700 text-base mt-2">Lorem ipsum dol.</p>
-            <a routerLink="/form">
-                <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
-            </a>
-        </div>
-    </div>
-
-    <div class="w-96 h-48 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-yellow-400 border-2">
-        <img src="../../assets/images-lab/asombro-percepcion.jpg" alt="Sala de Asombro" class="w-1/2 h-auto">
-        <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800">Sala de Asombro</h2>
-            <p class="text-gray-700 text-base mt-2">Lorem ipsum dol.</p>
-            <a routerLink="/form">
-                <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
+<div class="flex flex-wrap justify-center gap-6 mt-2.5 pt-20">
+    <h2 class="text-4xl mt-2.5 pl-5 mb-4 text-blue-800 font-bold">Opciones de Reserva</h2>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mt-2.5 pt-2">
+    <div *ngFor="let space of labSpaces; let i = index"
+        class="w-2/5 h-64 bg-white rounded-md overflow-hidden shadow-lg mb-6 flex"
+        [ngClass]="{'border-yellow-400 border-2': hoveredIndex === i}" (mouseover)="onMouseOver(i)"
+        (mouseout)="onMouseOut()">
+        <img [src]="space.imgSrc" [alt]="space.altText" class="w-1/2 h-auto">
+        <div class="p-6 w-1/2">
+            <h2 class="text-2xl font-semibold text-gray-800">{{space.title}}</h2>
+            <p class="text-gray-700 text-base mt-2">{{space.description}}</p>
+            <a [routerLink]="['/form', space.id]">
+                <button
+                    class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
             </a>
         </div>
     </div>
 </div>
 
-<h2 class="text-4xl text-blue-800 font-bold">Confirmación de Reserva</h2>
-<div>
-    <!--Aqui van las cards de confirmación de reserva-->
-    <div class="w-96 h-49 bg-white rounded-md overflow-hidden shadow-lg mb-4 flex border-yellow-400 border-2">
-        <img src="../../assets/images-lab/asombro-creacion.jpg" alt="Segunda Sala de Asombro" class="w-1/2 h-auto">
+<!-- Reservations Section -->
+<div class="flex flex-wrap justify-center gap-6 mt-2.5 pt-20">
+    <h2 class="text-4xl mt-2.5 pl-5 mb-4 text-blue-800 font-bold">Confirmación de Reserva</h2>
+</div>
+
+<div class="flex flex-wrap justify-center gap-6 mt-2.5 pt-2"
+    *ngIf="reservations && reservations.length > 0; else noReservations">
+    <div *ngFor="let reservation of reservations"
+        class="w-2/5 h-auto bg-white rounded-md overflow-hidden shadow-lg mb-6 flex border-yellow-400 border-2">
+        <img [src]="reservation.imgSrc" [alt]="reservation.altText" class="w-1/2 h-auto">
         <div class="p-4 w-1/2">
-            <h2 class="text-2xl font-semibold text-gray-800">Espacio de Asombro</h2>
-            <p class="text-gray-700 text-base mt-2">20 de Septiembre</p>
-            <p class="text-gray-700 text-base mt-2">60 minutos</p>
-            <button class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-yellow-600 focus:outline-none">Reservar</button>
+            <h2 class="text-2xl font-semibold text-gray-800">{{reservation.title}}</h2>
+            <p class="text-gray-700 text-sm mt-2">
+                <strong class="font-semibold">Nombre:</strong>
+                {{reservation.full_name}}
+            </p>
+            <p class="text-gray-700 text-sm mt-1">
+                <strong class="font-semibold">Email:</strong>
+                {{reservation.email}}
+            </p>
+            <p class="text-gray-700 text-base mt-1">
+                <strong class="font-semibold">Fecha de Reserva:</strong>
+                {{reservation.reservation_date}}
+            </p>
+            <p class="text-gray-700 text-base mt-1">
+                <strong class="font-semibold">Hora de Reserva:</strong>
+                {{reservation.reservation_time}}
+            </p>
+            <p class="text-gray-700 text-base mt-1">
+                <strong class="font-semibold">Duración:</strong>
+                {{reservation.estimated_duration}} mins.
+            </p>
+            <p class="text-gray-700 text-base mt-1">
+                <strong class="font-semibold">Número de Personas:</strong>
+                {{reservation.number_of_people}}
+            </p>
+            <p class="text-gray-700 text-base mt-1">
+                <strong class="font-semibold">Servicios Adicionales:</strong>
+                {{reservation.additional_services}}
+            </p>
         </div>
     </div>
 </div>
+
+<!-- No Reservations Message -->
+<ng-template #noReservations>
+    <div class="flex flex-wrap justify-center gap-6 pb-5 ">
+        <p class="text-xl mt-2.5 pl-5 mb-4 font-bold">
+            No has hecho ninguna reserva aún.
+            <br />
+            Crea una cuenta y haz tu reserva.
+        </p>
+    </div>
+</ng-template>

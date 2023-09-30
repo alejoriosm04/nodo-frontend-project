@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 import { LabSpacesComponent } from './lab-spaces/lab-spaces.component';
 import { ConoceMasComponent } from './conoce-mas/conoce-mas.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,16 @@ import { ConoceMasComponent } from './conoce-mas/conoce-mas.component';
     FormComponent,
     HomeComponent,
     LabSpacesComponent,
-    ConoceMasComponent
+    ConoceMasComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
