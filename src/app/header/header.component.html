@@ -15,25 +15,32 @@
                     <li><a href="https://www.nodoeafit.com/verificar" class="hover:underline">NODO</a></li>
                     <li><a href="#" class="hover:underline">Eventos</a></li>
                     <li><a routerLink="/labspaces" class="hover:underline">Reserva</a></li>
-                    <li><a href="#" class="hover:underline p-3 rounded-full" id="registrarse-button">Registrarse</a></li>
+                    <li *ngIf="!isAuthenticated"><a href="/login" class="hover:underline">Iniciar sesión</a></li>
+                    <li *ngIf="!isAuthenticated"><a href="/register" class="hover:underline p-3 rounded-full"
+                            id="registrarse-button">Registrarse</a>
+                    </li>
+                    <li *ngIf="isAuthenticated"><a href="#" (click)="logout()"
+                            class="hover:underline p-3 rounded-full">Cerrar sesión</a></li>
                 </ul>
             </nav>
             <button class="lg:hidden" (click)="toggleMobileMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
         </div>
-    </div>  
+    </div>
     <!-- Mobile Menu -->
     <div *ngIf="isMobileMenuOpen" class="lg:hidden bg-[#010068] text-white text-center font-inputsans">
         <ul id="mobile-menu-list">
             <li><a href="https://www.nodoeafit.com/verificar" class="block py-3">NODO</a></li>
             <li><a href="#" class="block py-3">Eventos</a></li>
             <li><a routerLink="/labspaces" class="block py-3">Reserva</a></li>
-            <li><a href="#" class="block py-3">Registrarse</a></li>
+            <li *ngIf="!isAuthenticated"><a href="/login" class="block py-3">Iniciar sesión</a></li>
+            <li *ngIf="!isAuthenticated"><a href="/register" class="block py-3">Registrarse</a></li>
+            <li *ngIf="isAuthenticated"><a href="#" (click)="logout()" class="block py-3">Cerrar sesión</a></li>
         </ul>
     </div>
 </header>
-
-
