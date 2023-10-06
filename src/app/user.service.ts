@@ -9,7 +9,7 @@ import { LabSpace } from 'src/interfaces';
 
 export class UserService {
 
-  baseUrl = 'https://213e-142-93-198-98.ngrok-free.app/';
+  baseUrl = 'https://213e-142-93-198-98.ngrok-free.app';
 
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
