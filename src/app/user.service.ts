@@ -60,7 +60,7 @@ export class UserService {
 
   // Method to get the lab spaces from the backend
   getLabSpaces() {
-    return this.http.get<LabSpace[]>(`${this.baseUrl}/labspace/`);
+    return this.http.get(`${this.baseUrl}/labspace/`);
   }
 
   // Method to do reservation from lab spaces to the backend
